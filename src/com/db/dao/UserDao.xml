@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.db.dao.UserDao">
+	<!-- 根据用户名和密码查询用户 -->
+	<select id="login" resultType="com.polo.User">
+		select * from user where username = #{username} and password=#{password}
+	</select>
+	<!-- 添加用户 -->
+	<insert id="save" parameterType="list">
+		insert into user(username,password) values(#{username},#{password});
+	</insert>
+</mapper>
